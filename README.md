@@ -2,10 +2,15 @@
 # Monitering bank activity 
 
 minimum = 1000000
+maxmin = 4000000
 
 name1 = 'x5hh8'
 
+print("======================================================================================")
+
 stone = int(input("Has " + name1 + " put 1m stone into the bank? "))
+
+resultstone1 = minimum - stone
 
 if stone == 1:
 
@@ -13,11 +18,11 @@ if stone == 1:
 
 else:
 
-	resultstone1 = minimum - stone
-
-	print(name1 + " owes " + resultstone1 + "!")
+	print(name1 + " owes " + str(resultstone1) + " stone!")
 
 wood = int(input("Has " + name1 + " put 1m wood into the bank? "))
+
+resultwood1 = minimum - wood
 
 if wood == 1:
 
@@ -25,11 +30,11 @@ if wood == 1:
 
 else:
 
-	resultwood1 = minimum - wood 
-
-	print(name1 + " owes " + resultwood1 + "!") 
+	print(name1 + " owes " + str(resultwood1) + " wood!")
 
 ore = int(input("Has " + name1 + " put 1m ore into the bank? "))
+
+resultore1 = minimum - ore
 
 if ore == 1:
 
@@ -37,11 +42,11 @@ if ore == 1:
 
 else:
 
-	resultore1 = minimum - ore
-
-	print(name1 + " owes " + resultore1 + "!")
+	print(name1 + " owes " + str(resultore1) + " ore!")
 
 gold = int(input("Has " + name1 + " put 1m gold into the bank? "))
+
+resultgold1 = minimum - gold
 
 if gold == 1:
 
@@ -49,10 +54,22 @@ if gold == 1:
 
 else:
 
-	resultgold1 = minimum - gold
+	print(name1 + " owes " + str(resultgold1) + " gold!")
 
-	print(name1 + " owes " + resultgold1 + "!")
+Details1 = stone + wood + ore + gold
 
-Details1 = stone + ", " + wood + ", " + ore + " and " + gold
+Detail1 = int(maxmin) - (int(stone) + int(wood) + int(ore) + int(gold))
 
-print(Details1)
+if Details1 == 4:
+
+	print(name1 + " Has payed off this weeks bank deposit!")
+
+	print("======================================================================================")
+
+else:
+
+	print(str(Detail1) + " is what " + str(name1) + " owes altogether!")
+
+	print("======================================================================================")
+
+exit(1)
