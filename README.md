@@ -1,7 +1,9 @@
 # Rbn.py
 # Monitering bank activity 
 
-def logs():
+import time
+
+def RBN_BANK():
 
 	f = open("BANK_LOGS.txt", "a")
 
@@ -72,14 +74,24 @@ def logs():
 
 	else:
 
-		print(str(Detail1) + " is what " + str(name1) + "owes altogether!")
+		print(str(Detail1) + " is what " + str(name1) + " owes altogether!")
 
 		print("======================================================================================")
 
-	logs1 = (name1 + "\n" + Details1  + "\n" + Detail1 + "\nSecondary confirmation: \n" + stone + resultstone1 + "\n" + wood + resultwood1 + "\n" + ore + resultore1 + "\n" + gold + resultgold1 + "\n EXIT"
+	if Details1 == 4:
 
-	f.write(logs1)
+		logs1 = (name1 + " Has payed off this weeks bank deposit! EXIT ", time.asctime())
 
-	f.close()
+		f.write(str(logs1))
 
-logs()	
+		f.close()
+
+	else:
+
+		logs2 = (name1 + " owes: " + str(resultstone1) + " stone! " + name1 + " owes: " + str(resultwood1) + " wood! " + name1 + " owes: " + str(resultore1) + " ore! " + name1 + " owes: " + str(resultgold1) + " gold! EXIT ", time.asctime())
+
+		f.write(str(logs2))
+
+		f.close()
+
+RBN_BANK()
