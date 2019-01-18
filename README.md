@@ -74,6 +74,10 @@ def RBN_BANK():
 
 		print("======================================================================================")
 
+	elif Details1 < 4:
+
+		print(name1 + " still needs to deposit some more recourses but has been logged")
+
 	else:
 
 		print(str(Detail1) + " is what " + str(name1) + " owes altogether!")
